@@ -1,24 +1,40 @@
 <!DOCTYPE html>
-<!– Importei as bibliotecas para utilizar a Realidade Aumentada –>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
-<!– Arquivo css inline para ocultar o modo debug que vem na própria biblioteca –>
+<script src="js/aframe.min.js"></script>
+<!-- include aframe-ar.js -->
+<script src="js/aframe-ar.js"></script>
+
 <style type="text/css">
-#arjsDebugUIContainer {
-    display: none; !important;
+	
+#arjsDebugUIContainer 
+{
+   display: none; !important;
 }
+	
 .a-enter-vr-button
 {
-    display: none; !important;
+   display: none; !important;		
 }
 </style>
-<body>
-    <a-scene>
-        <a-marker-camera preset='custom' type='pattern' url='maranata.patt'>
-            <a-image position="0 0.2 0" rotation="270 0 0" height="1" width="1" src="maranata.png"></a-image>
-            <a-image position="0 0.4 0" rotation="270 0 0" height="1" width="1" src="maranata.png"></a-image>
-        </a-marker-camera>
-        <a-entity camera></a-entity>
-    </a-scene>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+
+
+<!-- <a-scene embedded arjs='sourceType: webcam;'> -->
+	<a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+	<a-marker-camera preset='custom' type='pattern' url='assets/big-m.patt'>
+		<!-- <a-box position="0 0 0" width="1" height="1" depth="0" material="shader:gif;src:url(assets/chandon-feed.gif);" transparent="true" gif="" rotation="" scale="" visible="" geometry=""></a-box> -->
+		<a-image position="0 0.2 0" rotation="270 0 0" height="1" width="1"  src="assets/voador.png"></a-image>
+		
+		<!-- <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere> -->
+		<!-- <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>  -->
+		
+		<!-- <a-image position="0 0 0" rotation="90 180 0" height="1" width="1"  src="https://raw.githubusercontent.com/mattGraphics/randomfiles/master/red-dot.png"></a-image> -->
+		
+		<!--<a-image position="0 0.4 0" rotation="270 0 0" height="1" width="1"  src="assets/hello-you-text.png"></a-image> -->
+		
+		  </a-marker-camera> 
+		  <a-entity camera></a-entity>
+		  
+	</a-scene>
 </body>
 </html>
