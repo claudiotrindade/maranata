@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<head>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<script src="js/aframe.min.js"></script>
-	<script src="js/aframe-ar.js"></script>
-	<style type="text/css">			
-		#arjsDebugUIContainer{
-			display: none; !important;
-		}
-		.a-enter-vr-button{
-			display: none; !important;
-		}
-	</style>
-</head>
-<body>
-	<a-scene embedded arjs>
-		<a-marker preset='custom' type='pattern' url='m-pattern-marker.patt'>
-			<a-video id="vid" src="assets/video.mp4" rotation="90 180 0" autoplay loop muted playsinline crossorigin></a-video>
-		</a-marker> 
-		<a-entity camera></a-entity>  
-	</a-scene>
-</body>
-</html>
+<script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+
+<a-assets>
+  <video id='vid' src="https://krpano.com/krpanocloud/webvr/video/video-1920x960.mp4" crossorigin="anonymous" />
+</a-assets>
+<a-scene>
+  <a-sky rotation="0 -90 0" src="#vid"></a-sky>
+</a-scene>
+
+<script>
+window.addEventListener('click', function () {
+  var v = document.querySelector('#vid');
+  v.play();
+});
+</script>
