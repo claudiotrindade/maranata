@@ -11,33 +11,19 @@
 			.a-enter-vr-button{
 				display: none; !important;
 			}
+			#vid {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				min-width: 100%; 
+				min-height: 100%;
+			}
 		</style>
-		<script>
-			AFRAME.registerComponent('vidhandler', {
-				init: function () {
-					// Set up initial state and variables.
-					this.toggle = false;
-					this.vid = document.querySelector("#vid")
-					this.vid.pause();
-				},
-				tick:function(){
-					if(this.el.object3D.visible == true){
-						if(!this.toggle){
-							this.toggle = true;
-							this.vid.play();
-						}
-					}else{
-						this.toggle = false;
-						this.vid.pause();
-					}
-				}
-			});
-		</script>
 	</head>
 	<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 		<a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
 			<a-marker-camera preset='custom' type='pattern' url='m-pattern-marker.patt' vidhandler>
-				<a-video id="vid" height="400px" width="600px" src="assets/video.mp4" preload="auto" loop="true" crossorigin></a-video>
+				<a-video id="vid" src="assets/video.mp4" preload="auto" loop="true" crossorigin></a-video>
 			</a-marker-camera> 
 			<a-entity camera></a-entity>  
 		</a-scene>
