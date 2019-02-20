@@ -17,7 +17,7 @@
 		<!-- <a-scene embedded arjs='sourceType: webcam;'> -->
 		<a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
 			<a-marker-camera preset='custom' type='pattern' url='m-pattern-marker.patt'>
-				<a-video src="assets/video.mp4"></a-video>
+				<a-video src="assets/video.mp4" preload="auto" loop="true" crossorigin></a-video>
 			</a-marker-camera> 
 			<a-entity camera></a-entity>  
 		</a-scene>
