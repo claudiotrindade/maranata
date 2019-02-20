@@ -2,12 +2,22 @@
 <html>
 	<head>
 		<script src="js/aframe.min.js"></script>
+		<!-- include aframe-ar.js -->
 		<script src="js/aframe-ar.js"></script>
+		<style type="text/css">			
+			#arjsDebugUIContainer{
+				display: none; !important;
+			}
+			.a-enter-vr-button{
+				display: none; !important;
+			}
+		</style>
 	</head>
 	<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+		<!-- <a-scene embedded arjs='sourceType: webcam;'> -->
 		<a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
 			<a-marker-camera preset='custom' type='pattern' url='m-pattern-marker.patt'>
-				<a-video id="vid" src="assets/video.mp4" preload="auto" loop="true" crossorigin></a-video>				
+				<a-video src="assets/video.mp4" preload="auto" loop="true" crossorigin></a-video>
 			</a-marker-camera> 
 			<a-entity camera></a-entity>  
 		</a-scene>
