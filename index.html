@@ -19,37 +19,11 @@
 				min-height: 100%;
 			}
 		</style>
-		<script>
-			AFRAME.registerComponent('vidhandler', {
-				init: function () {
-					console.log("init");
-					// Set up initial state and variables.
-					this.toggle = false;
-					this.vid = document.querySelector("#vid")
-					this.vid.pause();
-				},
-				tick:function(){
-					console.log("tick");
-					if(this.el.object3D.visible == true){
-						console.log("object3D");
-						if(!this.toggle){
-							console.log("object3D play");
-							this.toggle = true;
-							this.vid.play();
-						}
-					}else{
-						console.log("object3D pause");
-						this.toggle = false;
-						this.vid.pause();
-					}
-				}
-			});
-		</script>
 	</head>
 	<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 		<a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
-			<a-marker-camera preset='custom' type='pattern' url='m-pattern-marker.patt' vidhandler>
-				<a-video id="vid" src="assets/video.mp4" preload="auto" loop="true" crossorigin></a-video>
+			<a-video id="vid" src="assets/video.mp4" preload="auto" loop="true" crossorigin></a-video>
+			<a-marker-camera preset='custom' type='pattern' url='m-pattern-marker.patt' vidhandler>				
 			</a-marker-camera> 
 			<a-entity camera></a-entity>  
 		</a-scene>
