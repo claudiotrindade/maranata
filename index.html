@@ -44,7 +44,7 @@ if(this.el.object3D.visible == true){
       <video id="vid" src="https://cdn.glitch.com/b62367d1-ceab-454b-b664-b032f995ed86%2FBig_Buck_Bunny_Trailer_1080p.ogv.720p.webm?1532370072191" loop="true" crossorigin>
     </a-assets>
    
-    <a-marker id="memarker" preset="hiro" vidhandler>
+	<a-marker preset='custom' type='pattern' url='m-pattern-marker.patt' vidhandler>
       <a-plane position='1 2 -2' scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true;opacity: 0.7;src:#vid'></a-plane>
     </a-marker>
 
