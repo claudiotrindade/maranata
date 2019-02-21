@@ -1,0 +1,15 @@
+<script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+
+<a-assets>
+  <video id='vid' src="https://krpano.com/krpanocloud/webvr/video/video-1920x960.mp4" crossorigin="anonymous" />
+</a-assets>
+<a-scene>
+  <a-sky rotation="0 -90 0" src="#vid"></a-sky>
+ </a-scene>
+
+<script>
+window.addEventListener('click', function () {
+  var v = document.querySelector('#vid');
+  v.play();
+});
+</script>
